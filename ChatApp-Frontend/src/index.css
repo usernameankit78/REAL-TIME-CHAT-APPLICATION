@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default light theme */
+/* Default light theme */
+:root {
+  --color-primary: #ffc107; /* Amber Yellow */
+  --color-background: #111111; /* Very Dark Gray (Main Background) */
+  --color-background-secondary: #141414; /* Darker Gray (Secondary Background) */
+  --color-background-tertiary: #171717; /* Even Darker Gray (Tertiary Background) */
+  --color-text-primary: #f0f0f0; /* Light Gray */
+  --color-text-secondary: #b3b3b3; /* Medium Gray */
+  --color-button-bg: #ffc107; /* Amber Yellow */
+  --color-button-text: #333333; /* Dark Charcoal */
+  --color-border: #303030; /* Darker Gray */
+  --color-card-bg: #121212; /* Nearly Black */
+  --color-background-video: #202020;
+}
+
+/* light theme */
+.light {
+  --color-primary: #d4ab2e; /* Amber Yellow */
+  --color-background: #f5f5f5; /* Very Light Gray (Main Background) */
+  --color-background-secondary: #d0d0d0; /* Light Gray (Secondary Background) */
+  --color-background-secondary: #f5f5f5; /* Light Gray (Secondary Background) */
+  --color-background-secondary: #d0d0d0; /* Light Gray (Secondary Background) */
+  --color-background-tertiary: #e0e0e0; /* Slightly Darker Gray (Tertiary Background) */
+  /* Slightly Darker Gray (Tertiary Background) */
+  --color-text-primary: #303030; /* Dark Charcoal */
+  --color-text-secondary: #666666; /* Gray */
+  --color-button-bg: #ffc107; /* Amber Yellow */
+  --color-button-text: #333333; /* Dark Charcoal */
+  --color-border: #cacaca; /* Light Gray */
+  --color-card-bg: #ffffff; /* White */
+  --color-background-video: #e0e0e0;
+}
+
+.truncate-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  line-break: anywhere;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-60%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(20%);
+    opacity: 1;
+  }
+}
+
+.custom-toast {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  padding: 15px 10px;
+}
+
+.animation1 {
+  animation: bounce 0.4s ease-in-out infinite alternate;
+  animation-delay: -0.4s;
+}
+
+.animation2 {
+  animation: bounce 0.4s ease-in-out infinite alternate;
+  animation-delay: -0.2s;
+}
+
+.animation3 {
+  animation: bounce 0.4s ease-in-out infinite alternate;
+  animation-delay: 0s;
+}
+
+/* For modern browsers */
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--color-text-secondary) rgba(0, 0, 0, 0.1); /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Adjust this for width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-text-secondary); /* Background of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-secondary); /* Thumb color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* From Uiverse.io by Gautammsharma */
+.material-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.material-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.material-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 10px;
+  border: solid var(--color-text-primary); /* Update this to change tick color */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes flyUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.2);
+  }
+}
